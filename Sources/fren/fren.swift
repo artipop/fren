@@ -1,9 +1,11 @@
-// The Swift Programming Language
-// https://docs.swift.org/swift-book
+import ArgumentParser
 
 @main
-struct fren {
-    static func main() {
-        print("Hello, world!")
+struct fren: ParsableCommand {
+    @Argument(help: "The person to greet.")
+    public var name: String
+
+    public func run() throws {
+        print("Hello fren, \(name)!")
     }
 }
